@@ -1,0 +1,11 @@
+FROM node:4.5.0-slim
+MAINTAINER VividCloud
+
+WORKDIR /bundle
+
+COPY bundle /bundle
+RUN (cd programs/server && npm install)
+
+ENV PORT 80
+EXPOSE 80
+CMD node main.js

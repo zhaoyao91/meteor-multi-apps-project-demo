@@ -1,0 +1,10 @@
+FROM vividcloud/meteor
+MAINTAINER VividCloud
+
+WORKDIR /project/app1
+ENV PACKAGE_DIRS /project/packages
+
+COPY . /project
+
+RUN meteor npm i
+RUN meteor build --server-only --directory /
